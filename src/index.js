@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import stylesheet from'./stylesheet.css';
+class Reactastate extends React.Component{
+  constructor(){
+    super();
+    this.state={intialvalue:"Welcome to my New Application"} 
+  }
+  changevalue=()=>
+  {
+    this.setState({intialvalue:"Thank You"});
+  }
+  render(){
+    return<div>
+      <h1> {this.state.intialvalue}</h1>
+      <button type="button" onClick={this.changevalue}> Submit </button>
+    </div>
+  }
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(< Reactastate/>,document.getElementById('root'));
